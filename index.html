@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplicativo de Assinatura Digital</title>
+    <!-- Importação do arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Cabeçalho da aplicação -->
+      <header>
+        <h1>Assinatura Digital</h1>
+        <p>Use o mouse ou seu dedo para assinar no campo abaixo</p>
+      </header>
+
+      <!-- Seção principal com o canvas e controles -->
+      <main>
+        <!-- Campo para inserir o nome completo -->
+        <div class="input-group">
+          <label for="nome">Nome Completo:</label>
+          <input type="text" id="nome" placeholder="Digite seu nome completo" />
+        </div>
+
+        <!-- Área de assinatura usando canvas HTML5 -->
+        <div class="signature-pad-container">
+          <canvas id="signature-pad" width="600" height="200"></canvas>
+          <div class="signature-line">
+            <hr />
+            <p id="nome-assinatura">Nome do Assinante</p>
+          </div>
+        </div>
+
+        <!-- Botões de ação -->
+        <div class="buttons">
+          <button id="limpar" class="btn">Limpar Assinatura</button>
+          <button id="preview-btn" class="btn btn-primary">
+            Visualizar Assinatura
+          </button>
+          <button id="download" class="btn btn-success">Baixar Imagem</button>
+          <a
+            href="https://wa.me/5561982887294"
+            id="contato"
+            class="btn btn-whatsapp"
+            target="_blank"
+          >
+            Contatar Desenvolvedor
+          </a>
+        </div>
+
+        <!-- Área para visualizar a imagem gerada -->
+        <div class="preview-container">
+          <h3>Visualização da Imagem</h3>
+          <img
+            id="preview"
+            src=""
+            alt="Visualização da assinatura"
+            style="display: none"
+          />
+          <p class="preview-info">
+            Confira sua assinatura acima antes de baixar.
+          </p>
+        </div>
+      </main>
+
+      <!-- Rodapé com créditos do desenvolvedor -->
+      <footer>
+        <p>Desenvolvido por Antonio Rafael</p>
+      </footer>
+    </div>
+
+    <!-- Importação do arquivo JavaScript externo -->
+    <script src="app.js"></script>
+  </body>
+</html>
