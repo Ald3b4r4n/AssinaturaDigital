@@ -4,6 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aplicativo de Assinatura Digital</title>
+    <!-- Meta tags para PWA -->
+    <meta name="theme-color" content="#4361ee" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Assinatura Digital" />
+
+    <!-- Ícones para iOS -->
+    <link rel="apple-touch-icon" href="icon.png" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json" />
     <!-- Importação do arquivo CSS externo -->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -72,5 +86,23 @@
 
     <!-- Importação do arquivo JavaScript externo -->
     <script src="app.js"></script>
+    <!-- Registro do Service Worker -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/service-worker.js")
+            .then((registration) => {
+              console.log(
+                "Service Worker registrado com sucesso:",
+                registration.scope
+              );
+            })
+            .catch((error) => {
+              console.log("Falha ao registrar o Service Worker:", error);
+            });
+        });
+      }
+    </script>
   </body>
 </html>
